@@ -3,13 +3,29 @@ import useFetch from '@/composables/useFetch.js';
 
 const { data, getData } = useFetch();
 
-getData('pages', 'frontpage');
+getData('pages', 'slug=frontpage');
 
 </script>
 
 <template>
   <main>
-    <h1>{{ data.value?.acf.title || 'Welcome!' }}</h1>
-    <p>{{ data.value?.acf.text }}</p>
+    <section class="box-shadow">
+      <h1>{{ data[0]?.acf.title || 'Welcome!' }}</h1>
+      <p>{{ data[0]?.acf.text }}</p>
+    </section>
   </main>
 </template>
+
+<style lang="scss">
+@import "../assets/colors";
+
+section {
+  background-color: $secondary-color;
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  p {
+    line-height: 1.5rem;
+  }
+}
+</style>

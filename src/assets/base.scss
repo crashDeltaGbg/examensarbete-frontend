@@ -1,5 +1,6 @@
 @import 'fonts';
 @import 'classes';
+@import 'colors';
 
 *,
 *::after,
@@ -15,6 +16,8 @@ html {
 	width: 100%;
 
 	body {
+    background-color: $tertiary-color;
+    color: $primary-color;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
@@ -36,6 +39,17 @@ html {
 			main {
 				flex-grow: 1;
         margin: 1rem;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          color: $quinary-color;
+          font-family: $secondary-font-family;
+          text-transform: lowercase;
+        }
 			}
 		}
 	}

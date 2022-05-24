@@ -14,11 +14,12 @@ const currentYear = new Date().getFullYear();
 @import '../assets/colors';
 
 footer {
-  background-color: $tertiary-color;
+  background-color: $quarternary-color;
   border-radius: 0.5rem 0.5rem 0 0;
   margin: 0 0.5rem;
 
   p {
+    color: $quinary-color;
     text-align: center;
   }
 }

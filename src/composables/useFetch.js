@@ -1,17 +1,23 @@
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default function useFetch() {
-	const data = reactive({});
+	const data = ref([]);
 
-	const getData = async (collection, slug) => {
-		const response = await fetch(
-			`http://localhost/headless_wp/wp-json/wp/v2/${collection}?slug=${slug}`
-		);
+	const getData = async (collection, query) => {
+    const url = ref('');
+    if (query) {
+      url.value = `http://localhost/headless_wp/wp-json/wp/v2/${collection}?${query}`;
+    } else {
+      url.value = `http://localhost/headless_wp/wp-json/wp/v2/${collection}`;
+    }
+    const response = await fetch(url.value);
 		//console.log(response);
-		const result = await response.json();
+		//const result = await response.json();
 		//console.log(result);
-		data.value = await result[0];
+		//data.value = await result;
 		//console.log(data);
+    data.value = await response.json();
+    console.log(data.value);
 	};
 
 	return {

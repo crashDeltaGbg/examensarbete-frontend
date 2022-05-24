@@ -16,7 +16,9 @@ const toggleNavigation = () => {
     <div>
       <h1>yxelflod.se</h1>
     </div>
-    <nav v-if="hideNavigation" class="retro-font" @click="toggleNavigation()">menu</nav>
+    <nav v-if="hideNavigation" class="retro-font" @click="toggleNavigation()">
+      <span id="navigation-toggle">menu</span>
+    </nav>
     <nav v-else class="retro-font">
       <RouterLink @click="toggleNavigation()" to="/">Home</RouterLink>
       <RouterLink @click="toggleNavigation()" to="/music">Music</RouterLink>
@@ -31,10 +33,11 @@ const toggleNavigation = () => {
 header {
   @import '../assets/colors';
 
-  background-color: $secondary-color;
+  /* background-color: $secondary-color; */
 
   div {
     h1 {
+      color: $quinary-color;
       font-size: 2.8rem;
       text-align: center;
     }
@@ -42,9 +45,9 @@ header {
 
 
   nav {
-    background-color: $tertiary-color;
+    background-color: $quarternary-color;
     border-radius: 0.5rem;
-    color: $secondary-color;
+    color: $quinary-color;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -61,8 +64,12 @@ header {
     a:visited,
     a:hover,
     a:active {
-      color: $secondary-color;
+      color: inherit;
       text-decoration: none;
+    }
+
+    span#navigation-toggle {
+      cursor: pointer;
     }
   }
 }
