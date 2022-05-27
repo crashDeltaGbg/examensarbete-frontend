@@ -1,0 +1,56 @@
+@import 'fonts';
+@import 'classes';
+@import 'colors';
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	border-collapse: collapse;
+}
+
+html {
+  font-family: $primary-font-family;
+  font-size: $primary-font-size;
+	height: 100%;
+	width: 100%;
+
+	body {
+    background-color: $tertiary-color;
+    color: $primary-color;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		margin: 0;
+		width: 100%;
+
+		div#app {
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			margin: 0;
+
+      header {
+        h1 {
+          font-family: $secondary-font-family;
+        }
+      }
+
+			main {
+				flex-grow: 1;
+        margin: 1rem;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          color: $quinary-color;
+          font-family: $secondary-font-family;
+          text-transform: lowercase;
+        }
+			}
+		}
+	}
+}
