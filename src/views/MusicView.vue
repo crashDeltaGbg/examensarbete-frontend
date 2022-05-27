@@ -2,9 +2,9 @@
 import useFetch from '@/composables/useFetch.js';
 import { watch } from 'vue';
 
-const { data, getData } = useFetch();
+const { data: tracks, getData } = useFetch();
 
-getData('posts', 'categories=4');
+getData('posts', 'categories=24');
 
 /* watch(data, (newValue) => {
   console.log(data.value[0]);
@@ -15,12 +15,12 @@ getData('posts', 'categories=4');
 <template>
   <main>
     <h1>music</h1>
-    <div v-if="data">
-      <div class="song" v-for="song in data" :key="song.id">
-        <h2>{{ song.acf.track_name }}</h2>
-        <p>By: {{ song.acf.artist }}</p>
+    <div v-if="tracks">
+      <div class="song" v-for="track in tracks" :key="track.id">
+        <h2>{{ track.acf.trackname }}</h2>
+        <p>By: {{ track.acf.artist }}</p>
         <audio controls>
-          <source :src="song.acf.song_file" type="audio/mpeg">
+          <source :src="track.acf.songfile" type="audio/mpeg">
         </audio>
       </div>
     </div>

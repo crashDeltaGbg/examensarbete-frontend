@@ -5,7 +5,7 @@ import useFetch from '@/composables/useFetch.js';
 const { data, getData } = useFetch();
 const contacts = ref([]);
 
-getData('posts', 'categories=3');
+getData('posts', 'categories=23');
 
 watch(data, (newValue) => {
   let objects = [];
@@ -48,8 +48,8 @@ watch(data, (newValue) => {
     <div v-if="contacts">
       <div v-for="contact in contacts" :key="contact.info.id" class="contact-card box-shadow">
         <h2 class="contact-card-heading">{{ contact.info.firstname }} {{ contact.info.lastname }}</h2>
-        <p class="contact-email"><a href="`mailto:${contact.info.email}`">&#128231; {{ contact.info.firstname }}</a></p>
-        <p v-if="contact.info.phone" class="contact-phone"><a href="`tel:${contact.info.phone}`">&#128222; {{ contact.info.firstname }}</a></p>
+        <p class="contact-email"><a :href="`mailto:${contact.info.email}`">&#128231; {{ contact.info.firstname }}</a></p>
+        <p v-if="contact.info.phone" class="contact-phone"><a :href="`tel:${contact.info.phone}`">&#128222; {{ contact.info.firstname }}</a></p>
         <img class="contact-picture" v-if="contact.info.picture" :src="contact.info.picture"
           :alt="`${contact.info.firstname} ${contact.info.lastname}`" />
       </div>
@@ -68,7 +68,7 @@ div.contact-card {
     "contact-card-heading contact-picture"
     "contact-email        contact-picture"
     "contact-phone        contact-picture";
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 6fr 5fr;
   margin-bottom: 1rem;
   padding: 0.5rem;
   width: 100%;
@@ -95,10 +95,13 @@ div.contact-card {
   }
 
   img {
+    align-self: center;
     aspect-ratio: 1/1;
     border-radius: 50%;
     display: block;
-    max-width: 150px;
+    justify-self: center;
+    max-height: 150px;
+    max-width: 80%;
   }
 }
 </style>

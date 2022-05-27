@@ -6,9 +6,9 @@ export default function useFetch() {
 	const getData = async (collection, query) => {
     const url = ref('');
     if (query) {
-      url.value = `http://localhost/headless_wp/wp-json/wp/v2/${collection}?${query}`;
+      url.value = `https://ithscms.yxelflod.se/wp-json/wp/v2/${collection}?${query}`;
     } else {
-      url.value = `http://localhost/headless_wp/wp-json/wp/v2/${collection}`;
+      url.value = `https://ithscms.yxelflod.se/wp-json/wp/v2/${collection}`;
     }
     const response = await fetch(url.value);
 		//console.log(response);
