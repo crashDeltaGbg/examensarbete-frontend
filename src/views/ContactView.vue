@@ -24,20 +24,20 @@ watch(data, (newValue) => {
         dateOfBirth: object.acf.dateofbirth
       }
     }
-      objects.push(newObject);
-    }
-    function compare(a,b) {
-      if (a.name < b.name) {
-        return -1;
-      }
-      if (a.name > b.name) {
-        return 1;
-      }
-      return 0;
-    }
-    objects.sort( compare );
-    contacts.value = objects;
+    objects.push(newObject);
   }
+  function compare(a, b) {
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+    return 0;
+  }
+  objects.sort(compare);
+  contacts.value = objects;
+}
 )
 
 </script>
@@ -45,11 +45,14 @@ watch(data, (newValue) => {
 <template>
   <main>
     <h1>contact</h1>
-    <div v-if="contacts">
+    <div v-if="contacts" id="contact-cards-container">
       <div v-for="contact in contacts" :key="contact.info.id" class="contact-card box-shadow">
         <h2 class="contact-card-heading">{{ contact.info.firstname }} {{ contact.info.lastname }}</h2>
-        <p class="contact-email"><a :href="`mailto:${contact.info.email}`">&#128231; {{ contact.info.firstname }}</a></p>
-        <p v-if="contact.info.phone" class="contact-phone"><a :href="`tel:${contact.info.phone}`">&#128222; {{ contact.info.firstname }}</a></p>
+        <p class="contact-email"><a :href="`mailto:${contact.info.email}`">&#128231; {{ contact.info.firstname }}</a>
+        </p>
+        <p v-if="contact.info.phone" class="contact-phone"><a :href="`tel:${contact.info.phone}`">&#128222; {{
+            contact.info.firstname
+        }}</a></p>
         <img class="contact-picture" v-if="contact.info.picture" :src="contact.info.picture"
           :alt="`${contact.info.firstname} ${contact.info.lastname}`" />
       </div>
@@ -60,48 +63,54 @@ watch(data, (newValue) => {
 <style lang="scss">
 @import "../assets/colors";
 
-div.contact-card {
-  background-color: $secondary-color;
-  border-radius: 0.5rem;
-  display: grid;
-  grid-template-areas:
-    "contact-card-heading contact-picture"
-    "contact-email        contact-picture"
-    "contact-phone        contact-picture";
-  grid-template-columns: 6fr 5fr;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  width: 100%;
+div#contact-cards-container {
+  display: flex;
+  flex-direction: column;
 
-  .contact-card-heading {
-    grid-area: contact-card-heading;
-  }
+  div.contact-card {
+    background-color: $secondary-color;
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-areas:
+      "contact-card-heading contact-picture"
+      "contact-email        contact-picture"
+      "contact-phone        contact-picture";
+    grid-template-columns: 6fr 5fr;
+    margin-bottom: 1rem;
+    max-width: 450px;
+    padding: 0.5rem;
+    width: 100%;
 
-  .contact-picture {
-    grid-area: contact-picture;
-  }
+    .contact-card-heading {
+      grid-area: contact-card-heading;
+    }
 
-  .contact-phone {
-    grid-area: contact-phone;
-  }
+    .contact-picture {
+      grid-area: contact-picture;
+    }
 
-  .contact-email {
-    grid-area: contact-email;
-  }
+    .contact-phone {
+      grid-area: contact-phone;
+    }
 
-  a {
-    color: $primary-color;
-    text-decoration: none;
-  }
+    .contact-email {
+      grid-area: contact-email;
+    }
 
-  img {
-    align-self: center;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    display: block;
-    justify-self: center;
-    max-height: 150px;
-    max-width: 80%;
+    a {
+      color: $primary-color;
+      text-decoration: none;
+    }
+
+    img {
+      align-self: center;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      display: block;
+      justify-self: center;
+      max-height: 150px;
+      max-width: 80%;
+    }
   }
 }
 </style>
