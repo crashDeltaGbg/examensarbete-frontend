@@ -34,7 +34,7 @@ div#tracks {
   @media only screen and (min-width: 768px) {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   div.track {
