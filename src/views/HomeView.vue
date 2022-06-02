@@ -11,7 +11,7 @@ getData('pages', 'slug=frontpage');
   <main>
     <section class="box-shadow">
       <h1>{{ data[0]?.acf.title || 'Welcome!' }}</h1>
-      <p>{{ data[0]?.acf.text }}</p>
+      <div v-html="data[0]?.acf.text"></div>
     </section>
   </main>
 </template>
