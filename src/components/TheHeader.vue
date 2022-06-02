@@ -6,7 +6,6 @@ const hideNavigation = ref(true);
 
 const toggleNavigation = () => {
   hideNavigation.value = !hideNavigation.value;
-  // console.log(hideNavigation.value);
 }
 
 </script>
@@ -23,7 +22,7 @@ const toggleNavigation = () => {
       <RouterLink @click="toggleNavigation()" to="/">Home</RouterLink>
       <RouterLink @click="toggleNavigation()" to="/music">Music</RouterLink>
       <RouterLink @click="toggleNavigation()" to="/visuals">Visuals</RouterLink>
-      <RouterLink @click="toggleNavigation()" to="/about">About</RouterLink>
+      <RouterLink @click="toggleNavigation()" to="/about">About Me</RouterLink>
       <RouterLink @click="toggleNavigation()" to="/contact">Contact</RouterLink>
     </nav>
   </header>

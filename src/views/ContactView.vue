@@ -67,6 +67,12 @@ div#contact-cards-container {
   display: flex;
   flex-direction: column;
 
+  @media only screen and (min-width: 768px) {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   div.contact-card {
     background-color: $secondary-color;
     border-radius: 0.5rem;
@@ -76,10 +82,20 @@ div#contact-cards-container {
       "contact-email        contact-picture"
       "contact-phone        contact-picture";
     grid-template-columns: 6fr 5fr;
-    margin-bottom: 1rem;
-    max-width: 450px;
+    margin-bottom: 2rem;
+    max-width: 425px;
     padding: 0.5rem;
     width: 100%;
+
+    @media only screen and (min-width: 425px) {
+      div.contact-card {
+        grid-template-areas:
+          "contact-card-heading contact-card-heading"
+          "contact-email        contact-picture"
+          "contact-phone        contact-picture";
+        max-width: 60%;
+      }
+    }
 
     .contact-card-heading {
       grid-area: contact-card-heading;
@@ -113,4 +129,14 @@ div#contact-cards-container {
     }
   }
 }
+
+/* @media only screen and (min-width: 425px) {
+  div#contact-card-container {
+    flex-wrap: wrap;
+  }
+
+  div.contact-card {
+    max-width: 50%;
+  }
+} */
 </style>

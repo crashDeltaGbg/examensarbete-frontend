@@ -1,5 +1,28 @@
+<script setup>
+import useFetch from '@/composables/useFetch.js';
+
+const { data, getData } = useFetch();
+
+getData('pages', 'slug=about-me');
+</script>
+
 <template>
   <main>
-    <h1>This is an about page</h1>
+    <section class="box-shadow">
+      <h1>{{ data[0]?.acf.title || 'Hang on&hellip;' }}</h1>
+      <div v-html="data[0]?.acf.text"></div>
+    </section>
   </main>
 </template>
+
+<style lang="scss">
+section {
+  background-color: $secondary-color;
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  p {
+    line-height: 1.5rem;
+  }
+}
+</style>
