@@ -16,6 +16,7 @@ getData('pages', 'slug=about-me');
 </template>
 
 <style lang="scss">
+@import '../assets/colors';
 section {
   background-color: $secondary-color;
   border-radius: 0.5rem;
