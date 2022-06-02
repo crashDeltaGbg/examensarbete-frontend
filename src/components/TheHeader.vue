@@ -53,11 +53,8 @@ header {
     line-height: 2em;
     margin: 0.5rem;
     padding: 0.5rem 1rem;
-    position: sticky;
     text-align: right;
     text-transform: lowercase;
-    top: 0;
-    z-index: 5;
 
     a:link,
     a:visited,
