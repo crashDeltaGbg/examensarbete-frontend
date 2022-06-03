@@ -60,7 +60,7 @@ watch(data, (newValue) => {
   </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../assets/colors";
 
 div#contact-cards-container {

@@ -16,7 +16,7 @@ getData('pages', 'slug=frontpage');
   </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../assets/colors";
 
 section {

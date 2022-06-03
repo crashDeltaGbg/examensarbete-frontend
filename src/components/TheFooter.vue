@@ -10,7 +10,7 @@ const currentYear = new Date().getFullYear();
   </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../assets/colors';
 
 footer {

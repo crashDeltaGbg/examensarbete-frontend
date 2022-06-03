@@ -24,7 +24,7 @@ getData('posts', 'categories=24');
   </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../assets/colors';
 
 div#tracks {

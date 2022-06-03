@@ -28,7 +28,7 @@ const toggleNavigation = () => {
   </header>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 header {
   @import '../assets/colors';
 

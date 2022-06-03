@@ -15,7 +15,7 @@ getData('pages', 'slug=about-me');
   </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../assets/colors';
 section {
   background-color: $secondary-color;
