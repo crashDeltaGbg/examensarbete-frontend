@@ -21,6 +21,7 @@ getData('pages', 'slug=frontpage');
 
 section {
   background-color: $secondary-color;
+  border: 0.25rem solid $tertiary-color; 
   border-radius: 0.5rem;
   padding: 1rem;
 

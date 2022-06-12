@@ -33,6 +33,7 @@
 
 section {
   background-color: $secondary-color;
+  border: 0.25rem solid $tertiary-color;
   border-radius: 0.5rem;
   margin-bottom: 2rem;
   padding: 1rem;

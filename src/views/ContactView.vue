@@ -75,6 +75,7 @@ div#contact-cards-container {
 
   div.contact-card {
     background-color: $secondary-color;
+    border: 0.25rem solid $tertiary-color;
     border-radius: 0.5rem;
     display: grid;
     grid-template-areas:

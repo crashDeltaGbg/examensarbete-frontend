@@ -19,6 +19,7 @@ getData('pages', 'slug=about-me');
 @import '../assets/colors';
 section {
   background-color: $secondary-color;
+  border: 0.25rem solid $tertiary-color;
   border-radius: 0.5rem;
   padding: 1rem;
 

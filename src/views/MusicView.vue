@@ -40,6 +40,7 @@ div#tracks {
   div.track {
   
     background-color: rgba($secondary-color, 0.25);
+    border: 0.25rem solid $tertiary-color;
     border-radius: 0.5rem;
     display: grid;
     grid-gap: 0.5rem;
