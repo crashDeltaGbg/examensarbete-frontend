@@ -122,7 +122,7 @@ div#contact-cards-container {
     img {
       align-self: center;
       aspect-ratio: 1/1;
-      border-radius: 50%;
+      border-radius: 30% 70% 20% 80% / 70% 40% 60% 30% ;
       display: block;
       justify-self: center;
       max-height: 150px;
